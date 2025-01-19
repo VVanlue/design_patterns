@@ -6,7 +6,7 @@ public class AppartmentList {
 
     public AppartmentList() {
         appartments = new ArrayList<>();
-        sortBehavior = new QuickSort(); // Default sort behavior
+        sortBehavior = new BubbleSort(); // Default sort behavior
     }
 
     public void add(String address, int numBedrooms, int numBathrooms, double price) {

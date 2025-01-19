@@ -19,7 +19,7 @@ public class QuickSort implements SortBehavior {
         Appartment pivot = appartments.get(high);
         int i = low - 1;
         for (int j = low; j < high; j++) {
-            if (appartments.get(j).compareTo(pivot) <= 0) {
+            if (appartments.get(j).compareTo(pivot) > 0) {
                 i++;
                 // Swap appartments[i] and appartments[j]
                 Appartment temp = appartments.get(i);
