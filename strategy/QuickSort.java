@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 
+//Sorts low to high
 public class QuickSort implements SortBehavior {
     @Override
     public ArrayList<Appartment> sort(ArrayList<Appartment> appartments) {
         quickSort(appartments, 0, appartments.size() - 1);
-        return new ArrayList<>(appartments); // Return sorted list
+        return new ArrayList<>(appartments); // Returns the sorted list
     }
 
     private void quickSort(ArrayList<Appartment> appartments, int low, int high) {
@@ -21,13 +22,13 @@ public class QuickSort implements SortBehavior {
         for (int j = low; j < high; j++) {
             if (appartments.get(j).compareTo(pivot) > 0) {
                 i++;
-                // Swap appartments[i] and appartments[j]
+                // Swaps appartments[i] and appartments[j]
                 Appartment temp = appartments.get(i);
                 appartments.set(i, appartments.get(j));
                 appartments.set(j, temp);
             }
         }
-        // Swap appartments[i+1] and appartments[high] (pivot)
+        // Swaps appartments[i+1] and appartments[high] (pivot)
         Appartment temp = appartments.get(i + 1);
         appartments.set(i + 1, appartments.get(high));
         appartments.set(high, temp);

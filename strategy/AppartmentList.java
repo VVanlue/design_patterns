@@ -6,7 +6,7 @@ public class AppartmentList {
 
     public AppartmentList() {
         appartments = new ArrayList<>();
-        sortBehavior = new BubbleSort(); // Default sort behavior
+        sortBehavior = new BubbleSort(); // Sets the default sort behavior
     }
 
     public void add(String address, int numBedrooms, int numBathrooms, double price) {
@@ -18,10 +18,10 @@ public class AppartmentList {
     }
 
     public ArrayList<Appartment> getSortedList() {
-        return sortBehavior.sort(new ArrayList<>(appartments)); // Return a sorted copy
+        return sortBehavior.sort(new ArrayList<>(appartments)); // Returns back a sorted copy of the list
     }
 
     public ArrayList<Appartment> getUnSortedList() {
-        return new ArrayList<>(appartments); // Return a copy of the original list
+        return new ArrayList<>(appartments); // Returns back a copy of the original list
     }
 }
