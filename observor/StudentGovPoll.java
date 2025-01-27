@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * Represents a Student Government poll (Subject) that maintains a list of candidates
- * and notifies registered observers when changes occur (e.g., new candidates or votes).
+ * Represents a student government poll that maintains a list of candidates and updates observers when changes occur
  * @author Victoria
  */
 public class StudentGovPoll implements Subject {
@@ -11,9 +10,8 @@ public class StudentGovPoll implements Subject {
     private String school;
 
     /**
-     * Constructs a StudentGovPoll for a given school.
-     * Initializes the list of observers and candidates.
-     * @param school The name of the school associated with the poll.
+     * Constructs a StudentGovPoll for a given school and initializes the list of observers and candidates
+     * @param school The name of the school hosting  the poll
      */
     public StudentGovPoll(String school) {
         this.school = school;
@@ -22,23 +20,23 @@ public class StudentGovPoll implements Subject {
     }
 
     /**
-     * Registers an observer to be notified of updates.
-     * @param observer The observer to be registered.
+     * Registers an observer to be notified of updates
+     * @param observer The registered observer
      */
     public void registerObserver(Observer observer) {
         observers.add(observer);
     }
 
     /**
-     * Removes an observer from the list of observers.
-     * @param observer The observer to be removed.
+     * Removes an observer from the list of observers
+     * @param observer The removed observer
      */
     public void removeObserver(Observer observer) {
         observers.remove(observer);
     }
 
     /**
-     * Notifies all registered observers with the updated list of candidates.
+     * Notifies registered observers with the updated list of candidates
      */
     public void notifyObservers() {
         for (Observer observer : observers) {
@@ -47,10 +45,9 @@ public class StudentGovPoll implements Subject {
     }
 
     /**
-     * Adds a candidate to the poll using their full name.
-     * Splits the full name into first and last names and creates a new Candidate object.
-     * @param fullName The full name of the candidate (first name and last name).
-     * @throws IllegalArgumentException if the full name does not contain exactly two parts.
+     * Adds a candidate to the poll using their full name and splits the full name into first and last names
+     * @param fullName The full name of the candidate
+     * @throws IllegalArgumentException if the full name doesn't have exactly two parts
      */
     public void addCandidate(String fullName) {
         String[] nameParts = fullName.split(" ");
@@ -63,9 +60,9 @@ public class StudentGovPoll implements Subject {
     }
 
     /**
-     * Adds a candidate to the poll using their first and last name separately.
-     * @param firstName The first name of the candidate.
-     * @param lastName The last name of the candidate.
+     * Adds a candidate to the poll using their first and last name
+     * @param firstName 
+     * @param lastName 
      */
     public void addCandidate(String firstName, String lastName) {
         candidates.add(new Candidate(firstName, lastName));
@@ -73,11 +70,10 @@ public class StudentGovPoll implements Subject {
     }
 
     /**
-     * Enters votes for candidates in first, second, and third places.
-     * Updates the corresponding candidate's vote count.
-     * @param firstPlace The position of the first-place vote.
-     * @param secondPlace The position of the second-place vote.
-     * @param thirdPlace The position of the third-place vote.
+     * Enters votes for candidates in first, second, and third place and updates the corresponding candidate's vote count
+     * @param firstPlace 
+     * @param secondPlace 
+     * @param thirdPlace 
      */
     public void enterVotes(int firstPlace, int secondPlace, int thirdPlace) {
         if (firstPlace > 0 && firstPlace <= candidates.size()) {
@@ -93,8 +89,8 @@ public class StudentGovPoll implements Subject {
     }
 
     /**
-     * Returns the name of the school associated with the poll.
-     * @return The name of the school.
+     * Returns the name of the school hossting  the poll
+     * @return The school name
      */
     public String getSchool() {
         return school;

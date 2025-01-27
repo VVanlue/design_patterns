@@ -1,27 +1,23 @@
 import java.util.ArrayList;
 
 /**
- * Displays the tally of votes for each candidate, showing the number of first, second, and third place votes.
- * Implements the Observer interface to be notified when the list of candidates is updated.
+ * Displays the tally of votes for each candidate and notifies observer
  * @author Victoria
  */
 public class TallyDisplay implements Observer {
-    private Subject poll;
     private ArrayList<Candidate> candidates;
 
     /**
-     * Constructs a TallyDisplay for a given poll (Subject).
-     * Registers this observer to be notified when the poll changes.
-     * @param poll The poll (Subject) to which this observer is registered.
+     * Constructs a TallyDisplay for a given poll and notifies observer
+     * @param poll The poll for the registered observer
      */
     public TallyDisplay(Subject poll) {
-        this.poll = poll;
         poll.registerObserver(this);
     }
 
     /**
-     * Updates the list of candidates and triggers the display of vote tallies.
-     * @param candidates The updated list of candidates.
+     * Updates the list of candidates and display of vote tallies
+     * @param candidates The updated list of candidates
      */
     @Override
     public void update(ArrayList<Candidate> candidates) {
@@ -30,7 +26,7 @@ public class TallyDisplay implements Observer {
     }
 
     /**
-     * Displays the current tallies for each candidate, including first, second, and third place votes.
+     * Displays the current tally amount for each candidate
      */
     private void display() {
         System.out.println("\nCurrent Tallies:");

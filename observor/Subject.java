@@ -1,24 +1,23 @@
 /**
- * Represents a Subject in the Observer design pattern.
- * A Subject maintains a list of observers and notifies them of any changes.
+ * Subject maintains the list of observers and notifies them of any changes
  * @author Victoria
  */
 public interface Subject {
 
     /**
-     * Registers an observer to be notified of updates.
-     * @param observer The observer to be registered.
+     * Registers an observer to be notified of updates
+     * @param observer 
      */
     void registerObserver(Observer observer);
 
     /**
-     * Removes an observer from the list of observers.
-     * @param observer The observer to be removed.
+     * Removes an observer from the list of observers
+     * @param observer 
      */
     void removeObserver(Observer observer);
 
     /**
-     * Notifies all registered observers about changes.
+     * Notifies all registered observers about changes made
      */
     void notifyObservers();
 }
