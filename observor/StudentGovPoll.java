@@ -25,6 +25,17 @@ public class StudentGovPoll implements Subject {
         }
     }
 
+    public void addCandidate(String fullName) {
+        String[] nameParts = fullName.split(" ");
+        if (nameParts.length == 2) {
+            candidates.add(new Candidate(nameParts[0], nameParts[1]));
+        } else {
+            throw new IllegalArgumentException("Full name must include exactly two parts.");
+        }
+        notifyObservers();
+
+    }
+
     public void addCandidate(String firstName, String lastName) {
         candidates.add(new Candidate(firstName, lastName));
         notifyObservers();
