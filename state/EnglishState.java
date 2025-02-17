@@ -16,7 +16,7 @@ public class EnglishState extends State {
     private static final String HAPPY_FILE_NAME = "design_patterns/state/songs/happy-english.txt";
 
     /**
-     * nglishState for the given MusicBox
+     * EnglishState for the given MusicBox
      * Initializes with English lyrics for the songs
      * @param box The MusicBox for this state
      */
